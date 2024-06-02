@@ -1,0 +1,23 @@
+hydra:
+  run:
+    dir: ../data/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+data:
+  lack_of_activiti: 30
+  empty_balance: 18
+  sequence_length: 30
+
+model:
+  input_size: 8
+  # hidden_size: 4096
+  hidden_size: 2048
+  num_layers: 5
+  num_warmup_steps: 1000
+  num_cycles: 0.5
+
+base:
+  real_batch_size: 32
+  batch_size: 2048
+  learning_rate: 1e-03
+  max_epoch: 100
+  save_path: data/bet
